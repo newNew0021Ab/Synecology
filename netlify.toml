@@ -1,0 +1,11 @@
+# Указываем Netlify, что основная папка для работы - "client"
+[build]
+  base    = "client/"
+  publish = "client/dist/" # Или "client/build/", если папка называется так
+  command = "npm run build"
+
+# Правило перенаправления, которое решает проблему 404 ошибки
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
